@@ -1,0 +1,90 @@
+
+@use '@angular/material' as mat;
+@include mat.core();
+
+@import '~@angular/material/theming';
+
+$ailos-primary-palette: (
+    50 : #e3ebef,
+    100 : #b9ced8,
+    200 : #8baebe,
+    300 : #5c8da4,
+    400 : #397491,
+    500 : #165c7d,
+    600 : #135475,
+    700 : #104a6a,
+    800 : #0c4160,
+    900 : #06304d,
+    A100 : #81c4ff,
+    A200 : #4eacff,
+    A400 : #1b94ff,
+    A700 : #0289ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$ailos-secondary-palette: (
+    50 : #fff4e0,
+    100 : #ffe3b3,
+    200 : #ffd180,
+    300 : #ffbf4d,
+    400 : #ffb126,
+    500 : #ffa300,
+    600 : #ff9b00,
+    700 : #ff9100,
+    800 : #ff8800,
+    900 : #ff7700,
+    A100 : #ffffff,
+    A200 : #fff7f2,
+    A400 : #ffd9bf,
+    A700 : #ffcaa6,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+$desafio-angular-ailos-primary: mat.define-palette($ailos-primary-palette);
+
+$desafio-angular-ailos-accent: mat.define-palette($ailos-primary-palette);
+$desafio-angular-ailos-warn: mat.define-palette(mat.$red-palette);
+
+$desafio-angular-ailos-theme: mat.define-light-theme((
+  color: (
+    primary: $desafio-angular-ailos-primary,
+    accent: $desafio-angular-ailos-accent,
+    warn: $desafio-angular-ailos-warn,
+  )
+));
+
+@include mat.all-component-themes($desafio-angular-ailos-theme);
+
+

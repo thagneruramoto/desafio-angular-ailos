@@ -1,0 +1,31 @@
+<mat-drawer-container>
+    <mat-drawer mode="side" #drawer opened>
+        <div class="menu" fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="30" fxFill>
+            <img class="logo" src="../../assets/images/logo.png" />
+            <mat-icon>menu</mat-icon>
+            <mat-icon fontSet="material-icons-outlined">grade</mat-icon>
+            <mat-icon fontSet="material-icons-outlined">sms</mat-icon>
+            <mat-icon fontSet="material-icons-outlined">tune</mat-icon>
+            <mat-icon fontSet="material-icons-outlined">account_balance</mat-icon>
+            
+        </div>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div class="header-container" fxLayout="row" fxLayoutAlign="space-between center">
+            <div fxLayout="column" class="router-div-title">
+                <label class="router-title">NOVA ADMISSÃO COOPERADO</label>
+                <label class="router-subtitle">Cadastro / Admissão do Cooperado / Nova Admissão de Cooperado </label>
+            </div>
+            <div class="section-div" fxLayout="row" fxLayoutAlign="space-evenly center" fxLayoutGap="20px">
+                <mat-icon matBadge="7" matBadgeColor="warn" matBadgeSize="small" fontSet="material-icons-outlined">notifications</mat-icon>
+                <button class="button-coop" mat-stroked-button color="primary">VIACREDI</button>
+                <span class="img-profile-container">
+                    <img src="https://www.w3schools.com/howto/img_avatar.png" />
+                </span>
+            </div>
+        </div>
+        <div class="body-container">
+
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

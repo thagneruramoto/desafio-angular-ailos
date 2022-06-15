@@ -1,0 +1,87 @@
+mat-drawer-container {
+    height: 100%;
+    width: 100%;
+    background-color: #D8D8D8;
+}
+
+mat-drawer {
+    background-color: var(--color-primary);
+    width: 100px;
+}
+
+.header-container {
+    height: 90px;
+    background-color: #fff;
+}
+
+.router-title {
+    font-family: 'Exo 2';
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #101213;
+}
+
+.router-div-title {
+    height: auto;
+    margin-left: 24px;
+    top: 19px;
+    
+}
+
+.router-subtitle {
+    font-family: Open Sans;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-align: left;
+    color: #787878;
+}
+
+.section-div {
+    margin-right: 21px;
+}
+
+mat-icon {
+    color: #125D79;
+    cursor: pointer;
+}
+
+.button-coop {
+    border-radius: 15px;
+    font-family: 'Exo 2';
+    font-weight: 700;
+    font-style: bold;
+    font-size: 14px;
+    border-width: 1px;
+    border-color: #125D79;
+}
+
+
+.img-profile-container {
+    width: 41px;
+    height: 42px;
+    border-radius: 50%;
+    border-width: 1px;
+    border: 1px solid #125D79;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+img.logo {
+    margin: 20px;
+    height: 60px;
+    width: 60px;
+}
+
+.menu > * {
+    color: #fff;
+}
