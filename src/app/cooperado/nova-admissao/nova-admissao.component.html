@@ -75,7 +75,7 @@
 
     <div class="bottom-container" fxLayout="row" fxLayoutAlign="start center">
         <div class="bottom-buttons" fxLayoutGap="15px">
-            <button mat-raised-button color="primary" *ngIf="cooperado">Iniciar nova admissão</button>
+            <button mat-raised-button color="primary" *ngIf="cooperado" [disabled]="!cooperado.cpf?.situacaoParaAdmissao">Iniciar nova admissão</button>
             <button mat-stroked-button color="primary">Dicas para admissão</button>
         </div>
     </div>

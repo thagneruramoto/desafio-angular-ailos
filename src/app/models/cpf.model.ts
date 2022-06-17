@@ -16,4 +16,8 @@ export class CPFModel {
             default: return "Situacao não definida"
         }
     }
+
+    get situacaoParaAdmissao() {
+        return [SituacaoCPFEnum.Nula, SituacaoCPFEnum.Regular, SituacaoCPFEnum.PendenteRegularizacao].indexOf(this.situacao) >= 0
+    }
 }
