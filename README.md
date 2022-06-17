@@ -1,27 +1,9 @@
 # DesafioAngularAilos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.
+Este projeto tem por finalidade completar o desafio proposto pela Ailos.
 
-## Development server
+Para rodar basta executar um npm install.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Está sendo utilizado o JSON-SERVER para simular um backend através do db.json encontrado na raiz do projeto. Para executar, é necessário instalar o pacote json-server e após isso executar o comando 'json-server db.json' na raiz do projeto (ou onde optar por colocar o db.json).
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Caso seja necessário simular outros cenários de CPF e Cooperados, basta inserir os registros no db.json usando como base os já existentes e em seguida reiniciar o json-server.
