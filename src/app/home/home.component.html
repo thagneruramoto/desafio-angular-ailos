@@ -10,7 +10,7 @@
             
         </div>
     </mat-drawer>
-    <mat-drawer-content>
+    <mat-drawer-content fxLayout="column">
         <div class="header-container" fxLayout="row" fxLayoutAlign="space-between center">
             <div fxLayout="column" class="router-div-title">
                 <label class="router-title">NOVA ADMISSÃO COOPERADO</label>
@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="body-container">
-
+            <router-outlet></router-outlet>
         </div>
     </mat-drawer-content>
 </mat-drawer-container>

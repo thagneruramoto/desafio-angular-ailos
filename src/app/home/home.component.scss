@@ -1,7 +1,7 @@
 mat-drawer-container {
     height: 100%;
     width: 100%;
-    background-color: #D8D8D8;
+    background-color: #d8d8d8;
 }
 
 mat-drawer {
@@ -11,11 +11,13 @@ mat-drawer {
 
 .header-container {
     height: 90px;
+    width: 100%;
     background-color: #fff;
+    top: 0;
 }
 
 .router-title {
-    font-family: 'Exo 2';
+    font-family: "Exo 2";
     font-size: 24px;
     font-weight: 700;
     line-height: 32px;
@@ -28,7 +30,6 @@ mat-drawer {
     height: auto;
     margin-left: 24px;
     top: 19px;
-    
 }
 
 .router-subtitle {
@@ -46,27 +47,26 @@ mat-drawer {
 }
 
 mat-icon {
-    color: #125D79;
+    color: #125d79;
     cursor: pointer;
 }
 
 .button-coop {
     border-radius: 15px;
-    font-family: 'Exo 2';
+    font-family: "Exo 2";
     font-weight: 700;
     font-style: bold;
     font-size: 14px;
     border-width: 1px;
-    border-color: #125D79;
+    border-color: #125d79;
 }
-
 
 .img-profile-container {
     width: 41px;
     height: 42px;
     border-radius: 50%;
     border-width: 1px;
-    border: 1px solid #125D79;
+    border: 1px solid #125d79;
 }
 
 img {
@@ -85,3 +85,15 @@ img.logo {
 .menu > * {
     color: #fff;
 }
+
+.mat-stroked-button {
+    font-family: 'Open Sans';
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: left;
+    border: 1px solid #165C7D;
+    height: 50px;
+}
+

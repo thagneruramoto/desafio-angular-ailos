@@ -1,0 +1,76 @@
+<div class="router-outlet">
+    <mat-stepper>
+        <mat-step>
+            <ng-template matStepLabel>Início</ng-template>
+            <div fxLayout="column" fxLayoutGap="10px">
+                <label class="page-title">Informe o CPF do futuro cooperado (a)</label>
+                <label class="subtitle">Se necessário, você poderá duplicar uma conta existente ou pausar e retomar este
+                    cadastro futuramente.
+                    Digite apenas os números (sem pontos ou traços). </label>
+
+                <section fxLayout="row" fxLayoutAlign="start end" fxLayoutGap="10px">
+                    <div class="input-container">
+                        <label class="label" for="input_cpf">CPF </label>
+                        <input mask="000.000.000-00" required id="input_cpf" placeholder="000.000.000-00" />
+                        <mat-error *ngIf="false" class="text-aux">Informe um CPF válido</mat-error>
+                    </div>
+                    <button mat-raised-button class="button-cpf" color="primary" (click)="loading = !loading">
+                        <label *ngIf="!loading">Consultar por CPF</label>
+                        <mat-spinner color="warn" diameter="20" *ngIf="loading"></mat-spinner>
+                    </button>
+                </section>
+                <div fxLayout="row" fxLayoutGap="15px">
+                    <mat-card id="mat-card-cooperado">
+                        <mat-card-title>Situação cadastral do CPF</mat-card-title>
+                        <mat-card-subtitle class="subtitle">Consulta na Receita Federal</mat-card-subtitle>
+                        <mat-card-content fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="start center">
+                            <mat-icon>person</mat-icon>
+                            <div fxLayout="column">
+                                <span class="subtitle">Nome</span>
+                                <span class="body">Mariane de Sousa Oliveira</span>
+                            </div>
+                        </mat-card-content>
+                        <mat-card-content fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="start center">
+                            <mat-icon class="check-ok">check_circle_outline</mat-icon>
+                            <div fxLayout="column">
+                                <span class="subtitle">Situação do CPF</span>
+                                <span class="body">Regular</span>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+
+                    <mat-card id="mat-card-contas">
+                        <mat-card-title>Conta aplicação</mat-card-title>
+                        <mat-card-subtitle class="subtitle">Cooperativa Viacredi</mat-card-subtitle>
+                        <mat-card-content fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="start center">
+                            <mat-icon>credit_card</mat-icon>
+                            <div fxLayout="column">
+                                <span class="subtitle">Número da conta</span>
+                                <span class="body">254784-9</span>
+                            </div>
+                        </mat-card-content>
+                        <mat-card-content fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="start center">
+                            <span class="label button-duplicate">Duplicar conta</span>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Documentos</ng-template>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Dados cadastrais</ng-template>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Admissão</ng-template>
+        </mat-step>
+    </mat-stepper>
+
+    <div class="bottom-container" fxLayout="row" fxLayoutAlign="start center">
+        <div class="bottom-buttons" fxLayoutGap="15px">
+            <button mat-raised-button color="primary">Iniciar nova admissão</button>
+            <button mat-stroked-button color="primary">Dicas para admissão</button>
+        </div>
+    </div>
+</div>
