@@ -1,0 +1,15 @@
+{
+    "cooperado": [
+        {
+            "id": "09207808650", "nome": "Thagner Moreira Uramoto", "contas": [
+                {"id": "1", "numero": "158593-7", "tipo": 0, "cooperativa": {"id": 1, "razaoSocial": "Cooperativa Viacredi"}},
+                {"id": "2", "numero": "158598-8", "tipo": 1, "cooperativa": {"id": 1, "razaoSocial": "Cooperativa Viacredi"}}
+            ]
+        }
+    ],
+    "cpf": [
+        {"id": "02409863354", "nome": "Larissa Cristina Sousa Lima Uramoto", "situacao": 0},
+        {"id": "42509847564", "nome": "Raul Lima Uramoto", "situacao": 2},
+        {"id": "09207808650", "nome": "Thagner Moreira Uramoto", "situacao": 8}
+    ]
+}

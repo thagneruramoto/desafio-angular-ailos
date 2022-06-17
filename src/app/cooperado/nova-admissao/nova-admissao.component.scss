@@ -20,7 +20,7 @@ mat-stepper {
 
 .button-cpf {
     width: 172px;
-    height: 34px;
+    // height: 50px;
 
     border-radius: 2px;
 }
@@ -68,7 +68,15 @@ mat-card-subtitle {
     color: #00C246;
 }
 
+.check-no {
+    color: #FCD610;
+}
+
 .button-duplicate {
     color: #165C7D;
     cursor: pointer;
+}
+
+::ng-deep .mat-form-field {
+    height: fit-content;
 }

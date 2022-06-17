@@ -1,52 +1,58 @@
 <div class="router-outlet">
-    <mat-stepper>
-        <mat-step>
+    <mat-stepper linear>
+        <mat-step [stepControl]="form">
             <ng-template matStepLabel>Início</ng-template>
-            <div fxLayout="column" fxLayoutGap="10px">
+            <div fxLayout="column" fxLayoutGap="20px">
                 <label class="page-title">Informe o CPF do futuro cooperado (a)</label>
                 <label class="subtitle">Se necessário, você poderá duplicar uma conta existente ou pausar e retomar este
                     cadastro futuramente.
                     Digite apenas os números (sem pontos ou traços). </label>
 
-                <section fxLayout="row" fxLayoutAlign="start end" fxLayoutGap="10px">
+                <form [formGroup]="form" fxLayout="row" fxLayoutAlign="start end" fxLayoutGap="10px" autocomplete="off">
                     <div class="input-container">
                         <label class="label" for="input_cpf">CPF </label>
-                        <input mask="000.000.000-00" required id="input_cpf" placeholder="000.000.000-00" />
-                        <mat-error *ngIf="false" class="text-aux">Informe um CPF válido</mat-error>
+                        <input mask="000.000.000-00" formControlName="cpf" [ngClass]="{'input-error': !form.valid && !form.pristine}" required id="input_cpf" placeholder="000.000.000-00" />
+                        <mat-error *ngIf="!form.valid && !form.pristine" class="text-aux">Informe um CPF válido</mat-error>
                     </div>
-                    <button mat-raised-button class="button-cpf" color="primary" (click)="loading = !loading">
-                        <label *ngIf="!loading">Consultar por CPF</label>
-                        <mat-spinner color="warn" diameter="20" *ngIf="loading"></mat-spinner>
+                    <!-- <mat-form-field appearance="standard">
+                        <mat-label>CPF</mat-label>
+                        <input matInput mask="000.000.000-00" formControlName="cpf" required id="input_cpf" placeholder="000.000.000-00" />
+                        <mat-error *ngIf="!form.valid && !form.pristine" class="text-aux">Informe um CPF válido</mat-error>
+                    </mat-form-field> -->
+                    <button mat-raised-button class="button-cpf" [disabled]="!form.valid" color="primary" (click)="consultarCPF(fcCpf.value)">
+                        <span *ngIf="!loading">Consultar por CPF</span>
+                        <i class="fa fa-spinner fa-spin" *ngIf="loading"></i>
                     </button>
-                </section>
-                <div fxLayout="row" fxLayoutGap="15px">
-                    <mat-card id="mat-card-cooperado">
+                    
+                </form>
+                <div id="div_cards" fxLayout="row" fxLayoutGap="15px">
+                    <mat-card id="mat-card-cooperado" *ngIf="cooperado">
                         <mat-card-title>Situação cadastral do CPF</mat-card-title>
                         <mat-card-subtitle class="subtitle">Consulta na Receita Federal</mat-card-subtitle>
                         <mat-card-content fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="start center">
                             <mat-icon>person</mat-icon>
                             <div fxLayout="column">
                                 <span class="subtitle">Nome</span>
-                                <span class="body">Mariane de Sousa Oliveira</span>
+                                <span class="body">{{cooperado.nome}}</span>
                             </div>
                         </mat-card-content>
                         <mat-card-content fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="start center">
-                            <mat-icon class="check-ok">check_circle_outline</mat-icon>
+                            <mat-icon class="check-ok" *ngIf="cooperado.cpf?.situacao == 0">check_circle_outline</mat-icon>
+                            <mat-icon class="check-no" *ngIf="cooperado.cpf?.situacao != 0" fontSet="material-icons-outlined">info</mat-icon>
                             <div fxLayout="column">
                                 <span class="subtitle">Situação do CPF</span>
-                                <span class="body">Regular</span>
+                                <span class="body">{{cooperado.cpf?.situacaoTexto}}</span>
                             </div>
                         </mat-card-content>
                     </mat-card>
-
-                    <mat-card id="mat-card-contas">
-                        <mat-card-title>Conta aplicação</mat-card-title>
-                        <mat-card-subtitle class="subtitle">Cooperativa Viacredi</mat-card-subtitle>
+                    <mat-card id="mat-card-contas" *ngFor="let conta of cooperado?.contas">
+                        <mat-card-title>{{conta.tipoTexto}}</mat-card-title>
+                        <mat-card-subtitle class="subtitle">{{conta.cooperativa.razaoSocial}}</mat-card-subtitle>
                         <mat-card-content fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="start center">
                             <mat-icon>credit_card</mat-icon>
                             <div fxLayout="column">
                                 <span class="subtitle">Número da conta</span>
-                                <span class="body">254784-9</span>
+                                <span class="body">{{conta.numero}}</span>
                             </div>
                         </mat-card-content>
                         <mat-card-content fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="start center">
@@ -69,7 +75,7 @@
 
     <div class="bottom-container" fxLayout="row" fxLayoutAlign="start center">
         <div class="bottom-buttons" fxLayoutGap="15px">
-            <button mat-raised-button color="primary">Iniciar nova admissão</button>
+            <button mat-raised-button color="primary" *ngIf="cooperado">Iniciar nova admissão</button>
             <button mat-stroked-button color="primary">Dicas para admissão</button>
         </div>
     </div>

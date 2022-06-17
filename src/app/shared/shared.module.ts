@@ -10,6 +10,11 @@ import {MatInputModule} from '@angular/material/input';
 import { NgxMaskModule } from 'ngx-mask'
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatCardModule} from '@angular/material/card';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
+
 
 const angularModules = [
   MatBadgeModule,
@@ -19,7 +24,9 @@ const angularModules = [
   MatStepperModule,
   MatInputModule,
   MatProgressSpinnerModule,
-  MatCardModule
+  MatCardModule,
+  MatSnackBarModule,
+  FormsModule
 ]
 
 @NgModule({
@@ -27,13 +34,15 @@ const angularModules = [
   imports: [
     CommonModule,
     FlexLayoutModule,
+    ReactiveFormsModule,
     NgxMaskModule.forRoot(),
     angularModules
   ],
   exports: [
     angularModules,
     FlexLayoutModule,
-    NgxMaskModule
+    NgxMaskModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

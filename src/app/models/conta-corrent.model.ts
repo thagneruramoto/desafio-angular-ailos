@@ -3,4 +3,8 @@ import { ContaModel } from "./conta.model";
 
 export class ContaCorrenteModel extends ContaModel{
     tipo = TipoContaEnum.ContaCorrente
+
+    get tipoTexto(): String {
+        return "Conta corrente"
+    }
 }
